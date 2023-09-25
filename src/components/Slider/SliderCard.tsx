@@ -31,7 +31,7 @@ const SliderCard: React.FC<SlidercardProps> = ({ data }) => {
             fontSize: textType2,
           }}
         >
-          WOMEN'S LATEST FASHION SALE
+          WOMEN&apos;S LATEST FASHION SALE
         </Typography>
         <Typography
           variant="body2"
