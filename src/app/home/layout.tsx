@@ -32,9 +32,7 @@ export default function DashboardLayout({
             md: "0",
           },
         }}
-      >
-        <Footer />
-      </Box>
+      ></Box>
     </Stack>
   );
 }

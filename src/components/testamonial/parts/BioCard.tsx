@@ -23,7 +23,14 @@ export default function BioCard() {
         boxShadow: "lg",
       }}
     >
-      <CardContent sx={{ alignItems: "center", textAlign: "center" }}>
+      <CardContent
+        sx={{
+          alignItems: "center",
+          textAlign: "center",
+          justifyContent: "center",
+          alingItems: "center",
+        }}
+      >
         <Avatar src="/user.jpg" sx={{ "--Avatar-size": "4rem" }} />
 
         <Typography level="title-lg">Elsa Doe</Typography>

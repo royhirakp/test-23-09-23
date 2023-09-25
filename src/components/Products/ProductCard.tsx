@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductProps> = ({
   imgUrl,
 }) => {
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 250, padding: "1%" }}>
       <CardMedia
         component="img"
         alt="green iguana"

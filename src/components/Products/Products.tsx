@@ -78,6 +78,7 @@ const Products = () => {
         justifyContent="space-around"
         gap={1}
         flexWrap="wrap"
+        mt="1%"
       >
         {data.map((item, i) => {
           return (

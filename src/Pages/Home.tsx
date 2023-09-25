@@ -1,6 +1,7 @@
 "use client";
 import SimpleBottomNavigation from "@/components/BottomNavigation/SimpleBottomNavigation";
 import Container from "@/components/Container";
+import Footer from "@/components/Footer/Footer";
 import Products from "@/components/Products/Products";
 import SimpleSlider from "@/components/Slider/Slider";
 import TestamonialSection from "@/components/testamonial/TestamonialSection";
@@ -21,23 +22,21 @@ const Home = () => {
       <Container style={{}}>
         <TestamonialSection />
       </Container>
-      <Container style={{}}>
-        <Box
-          className="navigatinbarhirta"
-          sx={{
-            position: "fixed",
-            zIndex: "9999",
-            width: "100%",
-            bottom: 0,
-            display: {
-              xs: "block",
-              md: "none",
-            },
-          }}
-        >
-          <SimpleBottomNavigation />
-        </Box>
-      </Container>
+      <Footer />
+      <Box
+        sx={{
+          position: "fixed",
+          zIndex: "9999",
+          width: "100%",
+          bottom: 0,
+          display: {
+            xs: "block",
+            md: "none",
+          },
+        }}
+      >
+        <SimpleBottomNavigation />
+      </Box>
     </div>
   );
 };
