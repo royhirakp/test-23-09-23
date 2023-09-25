@@ -15,13 +15,14 @@ const data = [
     img: "/banner-3.jpg",
   },
 ];
+
 export default function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: "true",
+    autoplay: true,
     pauseOnHover: false,
   };
   return (
