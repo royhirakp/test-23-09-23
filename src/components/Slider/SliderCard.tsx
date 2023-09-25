@@ -31,7 +31,7 @@ const SliderCard: React.FC<SlidercardProps> = ({ data }) => {
             fontSize: textType2,
           }}
         >
-          WOMEN&apos;S LATEST FASHION SALE
+          LATEST FASHION SALE
         </Typography>
         <Typography
           variant="body2"
@@ -40,7 +40,7 @@ const SliderCard: React.FC<SlidercardProps> = ({ data }) => {
           }}
           color="#838080"
         >
-          starting at $ 20.00
+          starting at 2000
         </Typography>
         <Box
           sx={{
