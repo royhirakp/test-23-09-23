@@ -6,10 +6,10 @@ import SimpleSlider from "../Slider/Slider";
 const Header = () => {
   return (
     <>
-      <Container style={{ border: "1px solid #c1bfbf" }}>
+      <Container style={{ borderBottom: "1px solid #e9c7c7" }}>
         <HeaderTop />
       </Container>
-      <Container style={{ border: "1px solid #c1bfbf" }}>
+      <Container style={{ borderBottom: "1px solid #e9c7c7" }}>
         <HeaderMain />
       </Container>
       <Container style={{}}>

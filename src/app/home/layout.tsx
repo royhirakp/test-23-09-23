@@ -9,7 +9,7 @@ export default function DashboardLayout({
 }) {
   return (
     <Stack>
-      <Box position="fixed" zIndex="9999" width="100%" bgcolor="#ffff">
+      <Box position="fixed" zIndex="1" width="100%" bgcolor="#ffff">
         <Header />
       </Box>
       <Box

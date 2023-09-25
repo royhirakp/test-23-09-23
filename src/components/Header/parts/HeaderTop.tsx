@@ -33,15 +33,15 @@ const HeaderTop = () => {
         }}
       >
         <IconButton>
-          <LinkedInIcon />
+          <LinkedInIcon style={{ color: "#ef7d7d" }} />
         </IconButton>
-        <IconButton>
+        <IconButton style={{ color: "#ef7d7d" }}>
           <InstagramIcon />
         </IconButton>
-        <IconButton>
+        <IconButton style={{ color: "#ef7d7d" }}>
           <TwitterIcon />
         </IconButton>
-        <IconButton>
+        <IconButton style={{ color: "#ef7d7d" }}>
           <FacebookIcon />
         </IconButton>
       </Box>
@@ -53,37 +53,16 @@ const HeaderTop = () => {
               sm: "0.9rem",
               md: "1rem",
             },
+            color: "#eb6161",
           }}
         >
           <b>FREE SHOPING</b> THIS WEEK ORDER OVER - $55
         </Typography>
       </Box>
-      <Box sx={{ fontSize: textType1 }}>
-        {/* <SelectDropdown /> */}
-
-        <select
-          style={{
-            width: "110%",
-            border: "1px solid",
-            borderRadius: "4px",
-            padding: "2%",
-          }}
-        >
-          <option
-            style={{
-              padding: "1%",
-              margin: "50px",
-              color: "red",
-            }}
-            value="1"
-          >
-            onddddddde
-          </option>
-          <option value="1">onccccccce</option>
-
-          <option value="1">oneccc</option>
-        </select>
-      </Box>
+      <Stack direction="row" gap="1%">
+        <SelectDropdown />
+        <SelectDropdown />
+      </Stack>
     </Stack>
   );
 };

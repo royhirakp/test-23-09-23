@@ -7,7 +7,7 @@ const SearchBar = () => {
   return (
     <Box
       sx={{
-        border: "1px solid gray",
+        border: "1px solid #ef2d2d",
         borderRadius: "10px",
         margin: "auto",
         width: {

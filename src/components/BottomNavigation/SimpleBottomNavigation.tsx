@@ -1,5 +1,5 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+import { Box, Paper } from "@mui/material";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
@@ -10,25 +10,42 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import { IconButton } from "@mui/joy";
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
+  function handelclick(x: any) {
+    setValue(x);
+  }
+
   return (
     <Box>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+      <Paper
+        sx={{
+          height: "80px",
+          display: "flex",
+          justifyContent: "space-around",
         }}
       >
-        <BottomNavigationAction label="Recents" icon={<MenuIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<ShoppingCartIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<FavoriteBorderIcon />} />
-
-        <BottomNavigationAction label="Nearby" icon={<GridViewIcon />} />
-      </BottomNavigation>
+        <IconButton onClick={() => handelclick(1)} sx={{ padding: "4%" }}>
+          <MenuIcon
+            fontSize={`${value == 1 ? "large" : "medium"}`}
+            style={{ color: "#ef7d7d" }}
+          />
+        </IconButton>
+        <IconButton
+          onClick={() => handelclick(2)}
+          style={{ color: "#ef7d7d", padding: "4%" }}
+        >
+          <HomeIcon fontSize={`${value == 2 ? "large" : "medium"}`} />
+        </IconButton>
+        <IconButton
+          onClick={() => handelclick(3)}
+          style={{ color: "#ef7d7d", padding: "4%" }}
+        >
+          <ShoppingCartIcon fontSize={`${value == 3 ? "large" : "medium"}`} />
+        </IconButton>
+      </Paper>
     </Box>
   );
 }

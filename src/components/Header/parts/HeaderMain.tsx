@@ -6,7 +6,16 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Person2Icon from "@mui/icons-material/Person2";
 import SearchBar from "./SearchBar";
-
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 const HeaderMain = () => {
   return (
     <Stack
@@ -28,6 +37,9 @@ const HeaderMain = () => {
               xs: "26px",
               sm: "31px",
             },
+            color: "#ef2d2d",
+            fontFamily: "cursive",
+            paddingBottom: "2%",
           }}
           textAlign="center"
         >
@@ -59,13 +71,15 @@ const HeaderMain = () => {
       >
         <Box>
           <IconButton>
-            <Person2Icon />
+            <Person2Icon style={{ color: "#ef7d7d" }} />
           </IconButton>
-          <IconButton>
+          <IconButton style={{ color: "#ef7d7d" }}>
             <FavoriteBorderIcon />
           </IconButton>
-          <IconButton>
-            <ShoppingCartIcon />
+          <IconButton style={{ color: "#ef7d7d" }}>
+            <StyledBadge badgeContent={4} color="secondary">
+              <ShoppingCartIcon />
+            </StyledBadge>
           </IconButton>
         </Box>
       </Box>
