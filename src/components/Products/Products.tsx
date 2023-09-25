@@ -69,7 +69,7 @@ const data = [
 import { textType2 } from "@/elementStyle/Text";
 const Products = () => {
   return (
-    <Box>
+    <Box mt="2%">
       <Typography sx={{ fontSize: textType2 }} variant="h1">
         Product
       </Typography>

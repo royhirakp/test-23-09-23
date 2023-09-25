@@ -11,9 +11,9 @@ const Container: React.FC<ContainerProps> = ({ children, style }) => {
     <Box
       sx={{
         padding: {
-          xs: "1px",
-          sm: "0 20px",
-          md: "0 50px",
+          xs: "2px",
+          sm: "0 25px",
+          md: "0 60px",
         },
         ...style,
       }}
