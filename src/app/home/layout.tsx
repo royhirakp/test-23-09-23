@@ -24,15 +24,6 @@ export default function DashboardLayout({
       >
         {children}
       </Box>
-      <Box
-        sx={{
-          alignContent: "flex-end",
-          marginBottom: {
-            xs: "90px",
-            md: "0",
-          },
-        }}
-      ></Box>
     </Stack>
   );
 }

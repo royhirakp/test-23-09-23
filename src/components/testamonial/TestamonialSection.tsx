@@ -27,6 +27,8 @@ const TestamonialSection = () => {
             xs: "1%",
             md: "0",
           },
+          position: "relative",
+          zIndex: "-33",
         }}
       >
         <BioCard />
