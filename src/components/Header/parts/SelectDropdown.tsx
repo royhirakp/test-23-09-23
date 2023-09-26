@@ -28,7 +28,7 @@ export default function SelectDropdown() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box sx={{ minWidth: 120 }} color="#eb6161">
+        <Box sx={{ minWidth: 100, fontSize: "5px" }} color="#eb6161">
           <FormControl
             fullWidth
             sx={{
@@ -43,7 +43,9 @@ export default function SelectDropdown() {
               },
             }}
           >
-            <InputLabel sx={{ color: "#eb6161" }}>Age</InputLabel>
+            <InputLabel sx={{ color: "#eb6161", fontSize: "15px" }}>
+              Age
+            </InputLabel>
             <Select
               value={age}
               label="Age"

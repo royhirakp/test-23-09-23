@@ -6,7 +6,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Ratting from "./Ratting";
-
+import { addToCart } from "@/redux/slice/cartSlice";
+import { useDispatch } from "react-redux";
 import {
   textType1,
   buttonFontSize,
@@ -19,7 +20,7 @@ interface ProductProps {
   details: string;
   reviews: string;
   ratings: number;
-  price: string;
+  price: number;
   imgUrl: string;
 }
 const ProductCard: React.FC<ProductProps> = ({
@@ -31,6 +32,10 @@ const ProductCard: React.FC<ProductProps> = ({
   price,
   imgUrl,
 }) => {
+  const dispatch = useDispatch();
+  function handelClick(item: any) {
+    dispatch(addToCart(item));
+  }
   return (
     <Card sx={{ maxWidth: 250, padding: "1%" }}>
       <CardMedia
@@ -78,6 +83,17 @@ const ProductCard: React.FC<ProductProps> = ({
       </CardContent>
       <CardActions sx={{ padding: "2% 3%" }}>
         <Button
+          onClick={() =>
+            handelClick({
+              id,
+              name,
+              details,
+              reviews,
+              ratings,
+              price: price * 1,
+              imgUrl,
+            })
+          }
           sx={{
             "&.MuiButton-root": {
               backgroundColor: "#ef7d7d",

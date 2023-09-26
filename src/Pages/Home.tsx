@@ -12,11 +12,9 @@ const Home = () => {
   return (
     <div>
       <Container style={{}}>
-        {" "}
         <SimpleSlider />
       </Container>
       <Container style={{}}>
-        {" "}
         <Products />{" "}
       </Container>
       <Container style={{}}>

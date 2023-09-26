@@ -2,13 +2,11 @@
 import { Box, Stack, Typography, Paper, Button } from "@mui/material";
 import React from "react";
 import Divider from "@mui/material/Divider";
-import {
-  buttonFontSize,
-  textType1,
-  textType2,
-  textType3,
-} from "@/elementStyle/Text";
+
+import { checkoutCart } from "@/redux/slice/cartSlice";
+import { useDispatch } from "react-redux";
 const TotalCount = () => {
+  const dispatch = useDispatch();
   return (
     <Box
       sx={{
@@ -124,6 +122,7 @@ const TotalCount = () => {
         }}
       >
         <Button
+          onClick={() => dispatch(checkoutCart())}
           sx={{
             color: "red",
             float: "right",
