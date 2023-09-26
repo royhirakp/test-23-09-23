@@ -25,7 +25,7 @@ export default function DashboardLayout({
           flexDirection: "column",
         }}
       >
-        <Box sx={{ paddingBottom: "90px" }}>{children}</Box>
+        <Box sx={{ marginBottom: { xs: "155px", md: "80px" } }}>{children}</Box>
 
         <Box
           sx={{
@@ -34,7 +34,6 @@ export default function DashboardLayout({
             bottom: { xs: 75, md: 0 },
           }}
         ></Box>
-        <Footer />
 
         <Box
           sx={{
@@ -42,13 +41,19 @@ export default function DashboardLayout({
             zIndex: "9999",
             width: "100%",
             bottom: 0,
-            display: {
-              xs: "block",
-              md: "none",
-            },
           }}
         >
-          <SimpleBottomNavigation />
+          <Footer />
+          <Box
+            sx={{
+              display: {
+                xs: "block",
+                md: "none",
+              },
+            }}
+          >
+            <SimpleBottomNavigation />
+          </Box>
         </Box>
       </Box>
     </Stack>
