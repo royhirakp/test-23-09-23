@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Ratting from "./Ratting";
 import { addToCart } from "@/redux/slice/cartSlice";
 import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/redux/hooks";
 import {
   textType1,
   buttonFontSize,
@@ -32,7 +33,8 @@ const ProductCard: React.FC<ProductProps> = ({
   price,
   imgUrl,
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  // const dispatch = useDispatch();
   function handelClick(item: any) {
     dispatch(addToCart(item));
   }

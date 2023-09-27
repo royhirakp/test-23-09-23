@@ -18,7 +18,7 @@ const NavBar = () => {
       <Stack flexDirection="row" justifyContent="center" gap={2}>
         {arr.map((item, i) => {
           return (
-            <Link className="link-navbar" href="#3" key={i * 0.25}>
+            <Link className="link-navbar" href="home" key={i * 0.25}>
               <Typography sx={{ fontSize: navButtonStyle }}>{item}</Typography>
             </Link>
           );

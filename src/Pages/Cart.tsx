@@ -6,9 +6,10 @@ import CartCard from "@/components/cart/CartCard";
 import Container from "@/components/Container";
 import TotalCount from "@/components/cart/TotalCount";
 import { useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 const Cart = () => {
-  const data = useSelector((s: any) => s.cart);
-  // console.log(data, "=== data ");
+  const data = useAppSelector((s: any) => s.cart.cartProductList);
+  console.log(data, " from vcart=== data ");
   return (
     <Container style={{}}>
       <Typography
@@ -17,13 +18,10 @@ const Cart = () => {
         Your Cart: Checkout 4 items
       </Typography>
       <Box>
-        {/* card */}
-        <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard />
+        {data.map((item: any, i: any) => {
+          console.log("printiong cart card");
+          return <CartCard data={item} key={i * 0.025} />;
+        })}
       </Box>
       <TotalCount />
     </Container>

@@ -8,7 +8,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "51",
     rattings: 4,
-    price: "100",
+    price: 100,
     imgurl: "/jacket-1.jpg",
   },
   {
@@ -17,7 +17,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "15",
     rattings: 3,
-    price: "1500",
+    price: 1500,
     imgurl: "/jacket-2.jpg",
   },
   {
@@ -26,7 +26,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "35",
     rattings: 1,
-    price: "150",
+    price: 1505,
     imgurl: "/shirt-1.jpg",
   },
   {
@@ -35,7 +35,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "9",
     rattings: 4,
-    price: "1570",
+    price: 1570,
     imgurl: "/skirt-1.jpg",
   },
   {
@@ -44,7 +44,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "5",
     rattings: 4.5,
-    price: "1850",
+    price: 1850,
     imgurl: "/sports-1.jpg",
   },
   {
@@ -62,7 +62,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "5",
     rattings: 3.9,
-    price: "150",
+    price: 112,
     imgurl: "/watch-2.jpg",
   },
 ];

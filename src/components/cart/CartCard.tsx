@@ -13,7 +13,27 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { textType1, textType2, textType3 } from "@/elementStyle/Text";
-const CartCard = () => {
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import {
+  increaseItemQty,
+  decreseItemQty,
+  removeItems,
+} from "@/redux/slice/cartSlice";
+interface DetailsProps {
+  data: {
+    details: string;
+    id: number;
+    imgUrl: string;
+    name: string;
+    price: number;
+    qtyOfOrder: number;
+    ratings: number;
+    reviews: string;
+  };
+}
+const CartCard: React.FC<DetailsProps> = ({ data }) => {
+  const { details, id, imgUrl, name, price, qtyOfOrder, ratings, reviews } =
+    data;
   return (
     <Paper sx={{ margin: "1%" }}>
       <Stack
@@ -33,7 +53,12 @@ const CartCard = () => {
           }}
         >
           <Stack direction="row" justifyContent="space-between" flex={3}>
-            <ProductImageAndDetailes />
+            <ProductImageAndDetailes
+              details={details}
+              imgUrl={imgUrl}
+              name={name}
+              price={price}
+            />
           </Stack>
 
           <Stack
@@ -55,7 +80,7 @@ const CartCard = () => {
               }}
               flexDirection="column"
             >
-              <ButtonBox />
+              <ButtonBox id={id} qtyOfOrder={qtyOfOrder} />
             </Box>
           </Stack>
         </Stack>
@@ -66,7 +91,7 @@ const CartCard = () => {
             sx={{ fontSize: textType1 }}
             textAlign={"center"}
           >
-            $5
+            {qtyOfOrder * price}
           </Typography>
         </Box>
       </Stack>
@@ -75,7 +100,20 @@ const CartCard = () => {
 };
 
 export default CartCard;
-const ProductImageAndDetailes = () => {
+interface productImageProps {
+  imgUrl: string;
+  name: string;
+  details: string;
+  price: number;
+}
+
+// const CartCard: React.FC<DetailsProps> = ({ data }) => {
+const ProductImageAndDetailes: React.FC<productImageProps> = ({
+  imgUrl,
+  name,
+  details,
+  price,
+}) => {
   return (
     <>
       <div style={{ display: "flex", flex: 2 }}>
@@ -92,7 +130,7 @@ const ProductImageAndDetailes = () => {
             component="img"
             alt="green iguana"
             height="140"
-            image="/jacket-2.jpg"
+            image={imgUrl}
           />
         </Box>
         {/* PRODUCT DETAILS */}
@@ -106,7 +144,7 @@ const ProductImageAndDetailes = () => {
               },
             }}
           >
-            JACKET
+            {name}
           </Typography>
           <Typography
             sx={{
@@ -118,7 +156,7 @@ const ProductImageAndDetailes = () => {
               color: "#eb6c6c",
             }}
           >
-            <b>Men Yarn Fleece Full-zip jacke</b>
+            <b>{details}</b>
           </Typography>
         </Box>
       </div>
@@ -138,13 +176,25 @@ const ProductImageAndDetailes = () => {
             lineHeight: "inherit",
           }}
         >
-          $4500
+          ${price}
         </Typography>
       </Box>
     </>
   );
 };
-const ButtonBox = () => {
+interface ButtonBoxPrpos {
+  qtyOfOrder: number;
+  id: number;
+}
+const iconButtonStyle = {
+  padding: "0",
+  backgroundColor: "antiquewhite",
+  width: { xs: "18px", sm: "30px" },
+  height: { xs: "18px", sm: "30px" },
+};
+const iconStyle = { width: { xs: "32%", sm: "55%", md: "75%" } };
+const ButtonBox: React.FC<ButtonBoxPrpos> = ({ qtyOfOrder, id }) => {
+  const dispatch = useAppDispatch();
   return (
     <>
       <Stack
@@ -152,20 +202,20 @@ const ButtonBox = () => {
         border="1px solid pink"
         justifyContent="space-between"
         sx={{
-          // padding: "0 5% 0 5%",
+          padding: "2%",
           borderRadius: "6px",
           // maxWidth: "120px",
           width: {
-            xs: "70px",
+            xs: "39%",
             sm: "200px",
           },
         }}
       >
         <IconButton
-          aria-label="delete"
-          sx={{ padding: "0", backgroundColor: "antiquewhite" }}
+          onClick={() => dispatch(decreseItemQty({ id }))}
+          sx={iconButtonStyle}
         >
-          <RemoveIcon sx={{ width: { xs: "32%", sm: "55%", md: "75%" } }} />
+          <RemoveIcon sx={iconStyle} />
         </IconButton>
         <Typography
           sx={{
@@ -179,14 +229,14 @@ const ButtonBox = () => {
             },
           }}
         >
-          5
+          {qtyOfOrder}
         </Typography>
         <IconButton
-          aria-label="delete"
+          onClick={() => dispatch(increaseItemQty({ id }))}
           size="large"
-          sx={{ padding: "0", backgroundColor: "antiquewhite" }}
+          sx={iconButtonStyle}
         >
-          <AddIcon sx={{ width: { xs: "32%", sm: "55%", md: "75%" } }} />
+          <AddIcon sx={iconStyle} />
         </IconButton>
       </Stack>
 
@@ -198,6 +248,10 @@ const ButtonBox = () => {
             //   maxWidth: "100%",
           }}
           size="small"
+          onClick={() => {
+            // console.log("remove button clicked ");
+            dispatch(removeItems({ id }));
+          }}
         >
           Remove
         </Button>

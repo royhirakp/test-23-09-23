@@ -8,6 +8,8 @@ import Person2Icon from "@mui/icons-material/Person2";
 import SearchBar from "./SearchBar";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
+import { useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -17,6 +19,8 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   },
 }));
 const HeaderMain = () => {
+  const count = useAppSelector((state) => state.cart.cartProductList.length);
+  const router = useRouter();
   return (
     <Stack
       justifyContent="space-between"
@@ -31,6 +35,7 @@ const HeaderMain = () => {
       <Box mt="auto" mb="auto">
         <Typography
           variant="h4"
+          onClick={() => router.push("/home")}
           m="auto"
           sx={{
             fontSize: {
@@ -76,8 +81,11 @@ const HeaderMain = () => {
           <IconButton style={{ color: "#ef7d7d" }}>
             <FavoriteBorderIcon />
           </IconButton>
-          <IconButton style={{ color: "#ef7d7d" }}>
-            <StyledBadge badgeContent={4} color="secondary">
+          <IconButton
+            style={{ color: "#ef7d7d" }}
+            onClick={() => router.push("/cart")}
+          >
+            <StyledBadge badgeContent={count} color="secondary">
               <ShoppingCartIcon />
             </StyledBadge>
           </IconButton>

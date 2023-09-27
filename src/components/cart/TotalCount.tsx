@@ -4,9 +4,11 @@ import React from "react";
 import Divider from "@mui/material/Divider";
 
 import { checkoutCart } from "@/redux/slice/cartSlice";
-import { useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 const TotalCount = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const totalPrice = useAppSelector((s) => s.cart.totalPrice);
+  console.log("total prioce form total count", totalPrice);
   return (
     <Box
       sx={{
@@ -53,7 +55,7 @@ const TotalCount = () => {
               },
             }}
           >
-            $500.00
+            ${totalPrice}
           </Typography>
         </Stack>
         <Divider />
@@ -81,7 +83,7 @@ const TotalCount = () => {
               },
             }}
           >
-            $5.00
+            ${(totalPrice * 18) / 100}
           </Typography>
         </Stack>
         <Divider />
@@ -109,7 +111,7 @@ const TotalCount = () => {
               },
             }}
           >
-            $500.00
+            ${totalPrice + (totalPrice * 18) / 100}
           </Typography>
         </Stack>
         <Divider />
@@ -122,8 +124,16 @@ const TotalCount = () => {
         }}
       >
         <Button
-          onClick={() => dispatch(checkoutCart())}
+          onClick={() => {
+            if (totalPrice == 0) {
+              alert("your cart is empty");
+            }
+            alert("Items deleted form REDUX");
+
+            dispatch(checkoutCart());
+          }}
           sx={{
+            marginTop: "2%",
             color: "red",
             float: "right",
             fontSize: { xs: "10px", sm: "12px", md: "16px" },
