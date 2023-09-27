@@ -53,7 +53,7 @@ const data = [
     detailes: "Men Yarn Fleece Full-zip jacke",
     reviews: "662",
     rattings: 4.5,
-    price: "150",
+    price: 150,
     imgurl: "/watch-1.jpg",
   },
   {
