@@ -29,7 +29,7 @@ const Home = () => {
       <Container style={{}}>
         <TestamonialSection />
       </Container>
-      <Box sx={{ marginBottom: "90px" }}>
+      <Box sx={{ marginBottom: { xs: "90px", md: "0" } }}>
         <Footer />
       </Box>
       <Box
