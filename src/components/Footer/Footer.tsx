@@ -7,9 +7,9 @@ const Footer = () => {
       bgcolor="gray"
       mt={1}
       textAlign="center"
-      padding={1}
+      // padding={1}
       color="#ffff"
-      marginTop="1%"
+      // marginTop="1%"
     >
       <Typography>copyright © logo</Typography>
       <Typography>all rights reserved 2023</Typography>

@@ -5,18 +5,18 @@ import { textType1, textType2, textType3 } from "@/elementStyle/Text";
 interface SlidercardProps {
   data: any;
 }
-const SliderCard: React.FC<SlidercardProps> = ({ data }) => {
+const SliderCardForMobile: React.FC<SlidercardProps> = ({ data }) => {
   return (
     <Box
       width="100%"
       borderRadius="10px"
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{ display: { xs: "block", sm: "none" } }}
     >
       <Stack
         sx={{
           position: "absolute",
-          top: "10%",
-          paddingLeft: "1%",
+          top: "150px",
+          paddingLeft: "10%",
         }}
       >
         <Typography
@@ -86,4 +86,4 @@ const SliderCard: React.FC<SlidercardProps> = ({ data }) => {
   );
 };
 
-export default SliderCard;
+export default SliderCardForMobile;

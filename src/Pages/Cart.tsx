@@ -14,7 +14,12 @@ const Cart = () => {
   return (
     <Container style={{}}>
       <Typography
-        sx={{ fontSize: textType1, textAlign: "center", paddingBottom: "6px" }}
+        sx={{
+          fontSize: textType1,
+          textAlign: "center",
+          paddingBottom: "6px",
+          marginTop: { xs: 0, sm: "0px", md: "0px", xl: "65px" },
+        }}
       >
         <u>
           {" "}

@@ -30,11 +30,7 @@ export default function SimpleSlider() {
       <Slider {...settings}>
         {data.map((item, i) => {
           return (
-            <div
-              key={i * 0.02}
-              className="findingmimo"
-              style={{ backgroundColor: "red" }}
-            >
+            <div key={i * 0.02}>
               <SliderCard data={item} />
             </div>
           );
