@@ -88,7 +88,7 @@ const Products = () => {
               id={item.id}
               imgUrl={item.imgurl}
               name={item.name}
-              price={item.price}
+              price={item.price * 1}
               ratings={item.rattings}
               reviews={item.reviews}
             />
