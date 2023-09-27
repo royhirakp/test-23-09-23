@@ -1,18 +1,15 @@
 import * as React from "react";
 import { Box, Paper } from "@mui/material";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import GridViewIcon from "@mui/icons-material/GridView";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/joy";
+import { useRouter } from "next/navigation";
+
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
+  const router = useRouter();
 
   function handelclick(x: any) {
     setValue(x);
@@ -34,13 +31,19 @@ export default function SimpleBottomNavigation() {
           />
         </IconButton>
         <IconButton
-          onClick={() => handelclick(2)}
+          onClick={() => {
+            router.push("/home");
+            handelclick(2);
+          }}
           style={{ color: "#ef7d7d", padding: "4%" }}
         >
           <HomeIcon fontSize={`${value == 2 ? "large" : "medium"}`} />
         </IconButton>
         <IconButton
-          onClick={() => handelclick(3)}
+          onClick={() => {
+            router.push("/cart");
+            handelclick(3);
+          }}
           style={{ color: "#ef7d7d", padding: "4%" }}
         >
           <ShoppingCartIcon fontSize={`${value == 3 ? "large" : "medium"}`} />

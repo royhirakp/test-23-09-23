@@ -26,7 +26,7 @@ export default function SimpleSlider() {
     pauseOnHover: false,
   };
   return (
-    <Box sx={{ width: "100%", borderRadius: "20%" }}>
+    <Box sx={{ width: "100%", borderRadius: "20%", marginTop: "15px" }}>
       <Slider {...settings}>
         {data.map((item, i) => {
           return (
