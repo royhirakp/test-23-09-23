@@ -29,7 +29,9 @@ const Home = () => {
       <Container style={{}}>
         <TestamonialSection />
       </Container>
-      <Footer />
+      <Box sx={{ marginBottom: "90px" }}>
+        <Footer />
+      </Box>
       <Box
         sx={{
           position: "fixed",

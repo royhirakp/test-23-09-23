@@ -10,12 +10,12 @@ const Footer = () => {
       padding={1}
       color="#ffff"
       marginTop="1%"
-      sx={{
-        marginBottom: {
-          xs: "90px",
-          md: "0",
-        },
-      }}
+      // sx={{
+      //   marginBottom: {
+      //     xs: "90px",
+      //     md: "0",
+      //   },
+      // }}
     >
       <Typography>copyright © logo</Typography>
       <Typography>all rights reserved 2023</Typography>
