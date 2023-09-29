@@ -45,6 +45,12 @@ const ProductCard: React.FC<ProductProps> = ({
         alt="green iguana"
         height="140"
         image={imgUrl}
+        sx={{
+          transition: "transform 0.2s", // Add a transition for smooth hover effect
+          "&:hover": {
+            transform: "scale(1.05)", // Increase the scale on hover
+          },
+        }}
       />
       <CardContent
         sx={{
