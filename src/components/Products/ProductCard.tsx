@@ -48,7 +48,7 @@ const ProductCard: React.FC<ProductProps> = ({
         sx={{
           transition: "transform 0.2s", // Add a transition for smooth hover effect
           "&:hover": {
-            transform: "scale(1.05)", // Increase the scale on hover
+            transform: "scale(1.1)", // Increase the scale on hover
           },
         }}
       />
@@ -56,6 +56,10 @@ const ProductCard: React.FC<ProductProps> = ({
         sx={{
           padding: {
             xs: "0 3%",
+          },
+          marginTop: {
+            xs: "9px",
+            sm: "5px",
           },
         }}
       >
