@@ -10,6 +10,7 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import { useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
+
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -18,6 +19,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
     padding: "0 4px",
   },
 }));
+
 const HeaderMain = () => {
   const count = useAppSelector((state) => state.cart.cartProductList.length);
   const router = useRouter();

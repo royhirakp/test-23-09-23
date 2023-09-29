@@ -37,6 +37,7 @@ const SearchBar = () => {
               sm: "65%",
               md: "75%",
             },
+            color: "#eb6161",
           }}
         />
       </IconButton>
